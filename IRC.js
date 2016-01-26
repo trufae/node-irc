@@ -40,7 +40,7 @@ function IRC(server, port, password) {
         var retVal = realEmit.apply(this, arguments);
         return retVal;
     }
-    this._socket.setTimeout(false);
+    this._socket.setTimeout(0);
     this._socket.setEncoding('ascii');
     this._socket.on('connect', function() {
         if (typeof password != 'undefined') this._socket.write('PASS ' + password + '\r\n');
